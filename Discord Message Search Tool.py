@@ -27,28 +27,10 @@ if xy.lower() == "n":
                 for message in json2:
                     message2 = message["Contents"]
                     if x.lower() in message2.lower():
-                        if "cdn.discordapp.com" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("cdn.discordapp.com", "cdn.discordapp.xyz"))
-                        elif "cdn.discordapp.net" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("cdn.discordapp.net", "cdn.discordapp.xyz"))
-                        elif "media.discordapp.net" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("media.discordapp.net", "media.discordapp.xyz"))
-                        elif "media.discordapp.com" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("media.discordapp.com", "media.discordapp.xyz"))
-                        else:
-                            messages_array.append(message["Timestamp"] + " " +  message2)
+                        messages_array.append(message["Timestamp"] + " " +  message2)
                     message3 = message["Attachments"]
                     if x.lower() in message3.lower():
-                        if "cdn.discordapp.com" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message3.replace("cdn.discordapp.com", "cdn.discordapp.xyz"))
-                        elif "cdn.discordapp.net" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message3.replace("cdn.discordapp.net", "cdn.discordapp.xyz"))
-                        elif "media.discordapp.net" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " + message3.replace("media.discordapp.net", "media.discordapp.xyz"))
-                        elif "media.discordapp.com" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " + message3.replace("media.discordapp.com", "media.discordapp.xyz"))
-                        else:
-                            messages_array.append(message["Timestamp"] + " " + message2)
+                        messages_array.append(message["Timestamp"] + " " + message2)
                 json_file.close()
 elif xy.lower() == "y":
     print(f"reading messages...")
@@ -59,28 +41,10 @@ elif xy.lower() == "y":
                 for message in json2:
                     message2 = message["Contents"]
                     if re.search(fr'\b{x.lower()}\b', message2.lower()):
-                        if "cdn.discordapp.com" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("cdn.discordapp.com", "cdn.discordapp.xyz"))
-                        elif "cdn.discordapp.net" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("cdn.discordapp.net", "cdn.discordapp.xyz"))
-                        elif "media.discordapp.net" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("media.discordapp.net", "media.discordapp.xyz"))
-                        elif "media.discordapp.com" in message2.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message2.replace("media.discordapp.com", "media.discordapp.xyz"))
-                        else:
-                            messages_array.append(message["Timestamp"] + " " +  message2)
+                        messages_array.append(message["Timestamp"] + " " +  message2)
                     message3 = message["Attachments"]
                     if re.search(fr'\b{x.lower()}\b', message3.lower()):
-                        if "cdn.discordapp.com" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message3.replace("cdn.discordapp.com", "cdn.discordapp.xyz"))
-                        elif "cdn.discordapp.net" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " +  message3.replace("cdn.discordapp.net", "cdn.discordapp.xyz"))
-                        elif "media.discordapp.net" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " + message3.replace("media.discordapp.net", "media.discordapp.xyz"))
-                        elif "media.discordapp.com" in message3.lower():
-                            messages_array.append(message["Timestamp"] + " " + message3.replace("media.discordapp.com", "media.discordapp.xyz"))
-                        else:
-                            messages_array.append(message["Timestamp"] + " " + message2)
+                        messages_array.append(message["Timestamp"] + " " + message2)
                 json_file.close()
 else:
     print("Invalid input")
